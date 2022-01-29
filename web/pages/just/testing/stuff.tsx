@@ -7,7 +7,7 @@ const MantineTesting: NextPage = () => {
 	const { data, isLoading, error } = useQuery<Dog[]>("all-dogs", () => fetch.get("/v1/dogs"))
 
 	if (error) return <p>Error: {error}</p>
-	if (isLoading) return <p>Loading...</p>
+	if (isLoading) return <p>Loading..........</p>
 
 	const rows = data
 		? data.map((dog: Dog) => (
