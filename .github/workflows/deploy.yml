@@ -35,6 +35,8 @@ jobs:
           tags: ghcr.io/${{github.repository}}/web:${{github.sha}}
           build-args: |
             SENTRY_AUTH_TOKEN=${{secrets.SENTRY_AUTH_TOKEN}}
+            SENTRY_DSN=${{secrets.SENTRY_DSN}}
+            NEXT_PUBLIC_SENTRY_DSN=${{secrets.SENTRY_DSN}}
             NEXT_PUBLIC_TEST=${{secrets.NEXT_PUBLIC_TEST}}
             NEXT_PUBLIC_API_PATH=${{secrets.NEXT_PUBLIC_API_PATH}}
           # NEXT_PUBLIC_GOOGLE_ANALYTICS=${{secrets.CI_NEXT_PUBLIC_GOOGLE_ANALYTICS}}

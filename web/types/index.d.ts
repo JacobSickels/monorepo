@@ -1,3 +1,5 @@
+type DogSex = "MALE" | "FEMALE"
+
 interface Dog {
 	id: string
 	callName: string

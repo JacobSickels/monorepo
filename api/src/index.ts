@@ -1,3 +1,6 @@
+import dotenv from "dotenv"
+dotenv.config()
+
 import moduleAlias from "module-alias"
 
 if (process.env.ENVIRONMENT !== "development") {
