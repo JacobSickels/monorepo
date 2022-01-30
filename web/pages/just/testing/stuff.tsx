@@ -22,6 +22,15 @@ const MantineTesting: NextPage = () => {
 
 	return (
 		<div>
+			<button
+				type="button"
+				onClick={() => {
+					console.log("sentry better get this, I swear it")
+					throw new Error("Sentry Frontend Error")
+				}}
+			>
+				Throw error
+			</button>
 			<Title>All Dogs</Title>
 			<Table>
 				<thead>

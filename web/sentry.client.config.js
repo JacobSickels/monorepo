@@ -7,8 +7,8 @@ import * as Sentry from "@sentry/nextjs"
 if (process.env.NEXT_PUBLIC_SENTRY_DSN)
 	Sentry.init({
 		dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
-		// Adjust this value in production, or use tracesSampler for greater control
 		environment: process.env.NEXT_PUBLIC_ENVIRONMENT,
+		// Adjust this value in production, or use tracesSampler for greater control
 		tracesSampleRate: 1.0
 		// ...
 		// Note: if you want to override the automatic release value, do not set a

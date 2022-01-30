@@ -79,9 +79,10 @@ services:
       - ./web:/src
     environment:
       - ENVIRONMENT=development
-      - NEXT_PUBLIC_API_PATH=http://localhost:5000
       - DATABASE_URL=postgres://devUser:woofbark@postgres:5432/prisma?schema=prisma
-      - SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN}
-      - NEXT_PUBLIC_SENTRY_DSN=${NEXT_PUBLIC_SENTRY_DSN}
       - FIREBASE_AUTH_EMULATOR_HOST=firebase-emulators:4001
       - FIREBASE_STORAGE_EMULATOR_HOST=firebase-emulators:4002
+      - NEXT_PUBLIC_API_PATH=http://localhost:5000
+      - NEXT_PUBLIC_ENVIRONMENT=development
+      - NEXT_PUBLIC_SENTRY_DSN=${NEXT_PUBLIC_SENTRY_DSN}
+      - SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN}

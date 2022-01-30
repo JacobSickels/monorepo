@@ -19,6 +19,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Create Sentry release
+        uses: getsentry/action-release@v1
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+        with:
+          environment: production
+
       - name: Build and push api image
         uses: docker/build-push-action@v2
         with:
@@ -34,8 +43,10 @@ jobs:
           push: true
           tags: ghcr.io/${{github.repository}}/web:${{github.sha}}
           build-args: |
+            ENVIRONMENT=production
             SENTRY_AUTH_TOKEN=${{secrets.SENTRY_AUTH_TOKEN}}
             SENTRY_DSN=${{secrets.SENTRY_DSN}}
+            NEXT_PUBLIC_ENVIRONMENT=production
             NEXT_PUBLIC_SENTRY_DSN=${{secrets.SENTRY_DSN}}
             NEXT_PUBLIC_TEST=${{secrets.NEXT_PUBLIC_TEST}}
             NEXT_PUBLIC_API_PATH=${{secrets.NEXT_PUBLIC_API_PATH}}
