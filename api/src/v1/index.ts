@@ -1,9 +1,16 @@
-import express from "express"
+console.log('V1 1')
+import { Router } from "express"
+console.log('V1 2')
 import clubs from "./routes/clubs"
+console.log('V1 3')
 import dogs from "./routes/dogs"
+console.log('V1 4')
 import trials from "./routes/trials"
+console.log('V1 5')
 import users from "./routes/users"
-const router = express.Router()
+console.log('V1 6')
+
+const router = Router()
 
 router.use("/clubs", clubs)
 router.use("/dogs", dogs)

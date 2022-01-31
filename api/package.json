@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"dev": "prisma migrate dev && ts-node-dev -r tsconfig-paths/register src/index.ts & prisma studio",
+		"dev": "NODE_ENV=production prisma migrate dev && ts-node-dev -r tsconfig-paths/register --exit-child src/index.ts & prisma studio",
 		"build": "rm -rf build && prisma generate && tsc -p tsconfig.json",
 		"start": "node ./build/src/index.js && prisma migrate deploy",
 		"test": "echo \"Error: no test specified\" && exit 1"

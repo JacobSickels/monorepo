@@ -1,23 +1,22 @@
 // @ts-ignore
-import faker from "@faker-js/faker"
 import { prisma } from "@Libs/prisma"
 import { State } from "@prisma/client"
-import express from "express"
-const router = express.Router()
+import { Router } from "express"
+const router = Router()
 
 // Write a new row
 router.post("/", async (req, response) => {
 	const resp = await prisma.user.create({
 		data: {
-			id: faker.datatype.uuid(),
-			firstName: faker.name.firstName(),
-			lastName: faker.name.lastName(),
-			streetAddress: faker.address.streetAddress(),
-			city: faker.address.city(),
-			state: faker.address.stateAbbr() as State,
-			postalCode: faker.address.zipCode(),
-			phone: faker.phone.phoneNumber(),
-			email: faker.internet.email()
+			id: "faker.datatype.uuid()",
+			firstName: "faker.name.firstName()",
+			lastName: "faker.name.lastName()",
+			streetAddress: "faker.address.streetAddress()",
+			city: "faker.address.city()",
+			state: "faker.address.stateAbbr()" as State,
+			postalCode: "faker.address.zipCode()",
+			phone: "faker.phone.phoneNumber()",
+			email: "faker.internet.email()"
 		}
 	})
 

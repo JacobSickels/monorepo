@@ -1,5 +1,4 @@
 // @ts-ignore
-import faker from "@faker-js/faker"
 import { prisma } from "@Libs/prisma"
 import { Dog, DogSex } from "@prisma/client"
 import CrudInterface, { ListParams } from "@Utils/crudInterface"
@@ -25,20 +24,20 @@ export default class DogService implements CrudInterface<Dog> {
 	create(dog: Dog): Promise<Dog> {
 		return prisma.dog.create({
 			data: {
-				callName: faker.name.firstName(),
-				akcBreed: faker.animal.dog(),
+				callName: "asdf",
+				akcBreed: "asdf",
 				sex: getRandomValueFromArray<DogSex>(["MALE", "FEMALE"]),
-				birthdate: faker.date.past(),
-				birthplace: faker.address.countryCode(),
-				akcRegisteredName: faker.name.title() + " " + faker.name.firstName() + " of " + faker.address.city(),
+				birthdate: "faker.date.past()",
+				birthplace: "faker.address.countryCode(),",
+				akcRegisteredName: "faker.name.title() + ",
 				akcTitlePrefix: "AKC",
 				akcTitleSuffix: "AKC",
 				akcMeasuredHeight: Math.floor(Math.random()) * (24 - 12 + 1) + 12,
-				registrationNumber: faker.datatype.uuid(),
-				breederName: faker.name.firstName() + " " + faker.name.lastName(),
-				sireName: faker.name.firstName(),
-				damName: faker.name.firstName(),
-				primaryOwnerId: faker.datatype.uuid(),
+				registrationNumber: "faker.datatype.uuid(),",
+				breederName: "faker.name.firstName() + ",
+				sireName: "faker.name.firstName(),",
+				damName: "faker.name.firstName(),",
+				primaryOwnerId: "faker.datatype.uuid(),",
 				jumpHeight: Math.floor(Math.random()) * (24 - 12 + 1) + 12
 			}
 		})

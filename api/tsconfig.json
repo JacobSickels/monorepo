@@ -1,5 +1,4 @@
 {
-	"compileOnSave": false,
 	"compilerOptions": {
 		"outDir": "build",
 		"baseUrl": "./src",
@@ -20,5 +19,6 @@
 			"@v1/*": ["./v1/*"]
 		}
 	},
-	"exclude": ["../node_modules"]
+	"include": ["**/*.ts", "**/*.js"],
+	"exclude": ["node_modules"]
 }

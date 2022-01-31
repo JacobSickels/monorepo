@@ -1,14 +1,14 @@
 // @ts-ignore
-import faker from "@faker-js/faker"
 import { prisma } from "@Libs/prisma"
-import express from "express"
-const router = express.Router()
+import { Router } from "express"
+
+const router = Router()
 
 // Write a new row
 router.post("/", async (req, response) => {
 	const resp = await prisma.club.create({
 		data: {
-			name: faker.name.lastName() + "'s " + faker.company.companyName() + " Club"
+			name: "test"
 		}
 	})
 

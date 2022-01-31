@@ -52,6 +52,7 @@ services:
     volumes:
       - ./api:/home/node/app
     environment:
+      - NODE_ENV=production
       - ENVIRONMENT=development
       - POSTGRES_USER=devUser
       - POSTGRES_PASSWORD=woofbark

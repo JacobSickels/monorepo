@@ -1,19 +1,21 @@
 const { SENTRY_DSN, ENVIRONMENT } = process.env
 
-import * as Sentry from "@sentry/node"
-// Needed for supporting tracing (even if it's not referenced)!
-import * as Tracing from "@sentry/tracing"
+import { init } from "@sentry/node";
+import { errorHandler, requestHandler } from '@sentry/node/dist/handlers';
+
 
 export const initSentry = () => {
 	if (!SENTRY_DSN) {
 		return console.log("Sentry is currently disabled.")
 	}
 
-	Sentry.init({
+	init({
 		dsn: SENTRY_DSN,
 		environment: ENVIRONMENT,
 		tracesSampleRate: 1.0
 	})
 }
 
-export default Sentry
+export const SentryRequestHandler = requestHandler;
+export const SentryErrorHandler = errorHandler;
+

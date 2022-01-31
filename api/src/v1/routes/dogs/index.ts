@@ -1,8 +1,9 @@
 // @ts-ignore
 import { prisma } from "@Libs/prisma"
 import DogController from "@v1/controllers/dog"
-import express from "express"
-const router = express.Router()
+import { Router } from "express"
+
+const router = Router()
 
 // Things to do in a route:
 // Send the client's request to the correct route (AKA the actual routing)
